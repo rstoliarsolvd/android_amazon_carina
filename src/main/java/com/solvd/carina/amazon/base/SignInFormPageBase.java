@@ -5,7 +5,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public abstract class SignInFormPageBase extends AbstractPage {
 
-    public SignInFormPageBase (RemoteWebDriver driver) {
+    public SignInFormPageBase(RemoteWebDriver driver) {
         super(driver);
     }
 

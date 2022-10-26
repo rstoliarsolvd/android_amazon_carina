@@ -13,7 +13,6 @@ public abstract class FilterMenuPageBase extends AbstractPage {
 
     public abstract FilterMenuPageBase clickSmartHomeBtn();
 
-
     public abstract FilterResultPageBase clickPetBtn();
 
     public abstract boolean isFMPageOpen();

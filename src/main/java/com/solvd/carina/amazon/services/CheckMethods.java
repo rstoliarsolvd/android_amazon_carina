@@ -1,16 +1,13 @@
 package com.solvd.carina.amazon.services;
 
+import com.qaprosoft.carina.core.foundation.utils.mobile.IMobileUtils;
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
-import com.qaprosoft.carina.core.gui.AbstractPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 import java.util.Locale;
 
-public class CheckMethods  {
+public class CheckMethods implements IMobileUtils {
 
     public static final String GOOD_DESIGN_LOCATOR = "//*[@id='nav-main']";
 
