@@ -1,14 +1,15 @@
 package com.solvd.carina.amazon.services;
 
-import com.qaprosoft.carina.core.foundation.IAbstractTest;
 import com.qaprosoft.carina.core.foundation.utils.mobile.IMobileUtils;
+import com.qaprosoft.carina.core.gui.AbstractPage;
 import com.solvd.carina.amazon.androidweb.pages.HomePage;
-import com.solvd.carina.amazon.androidweb.pages.UpTab;
 import com.solvd.carina.amazon.base.HomePageBase;
 import com.solvd.carina.amazon.base.UpTabBase;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class NavigationService implements IAbstractTest, IMobileUtils {
+public class NavigationService implements IMobileUtils {
+
+    HomePage homePage = new HomePage(null);
 
     /**
      * Back to HomePage
@@ -16,10 +17,9 @@ public class NavigationService implements IAbstractTest, IMobileUtils {
      * @param driver
      * @return
      */
-    public static HomePageBase goHome(RemoteWebDriver driver) {
-        UpTabBase upTab = new UpTab(driver);
-//        UpTabBase upTab = initPage(UpTabBase.class);
+    public static HomePageBase goHome(RemoteWebDriver driver, AbstractPage aPage) {
+        UpTabBase upTab = aPage.initPage(driver, UpTabBase.class);
         upTab.clickHomeBtn();
-        return  new HomePage(driver);
+        return aPage.initPage(driver, HomePageBase.class);
     }
 }

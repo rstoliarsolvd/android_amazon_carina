@@ -1,6 +1,7 @@
 package com.solvd.carina.amazon;
 
 
+import com.qaprosoft.carina.core.foundation.utils.mobile.IMobileUtils;
 import com.solvd.carina.amazon.constants.Const;
 import com.solvd.carina.amazon.services.CheckMethods;
 import org.apache.commons.io.FileUtils;
@@ -23,7 +24,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class AbstractTest {
+public class AbstractTest implements IMobileUtils {
 
     /**
      * For Selenium Standalone server //for parallel ran (multiThread)
@@ -141,7 +142,7 @@ public class AbstractTest {
 //    }
 
     public void refreshPageIfWrongDesign(RemoteWebDriver driver) {
-        CheckMethods checkMethods = new CheckMethods(driver);
+        CheckMethods checkMethods = new CheckMethods();
         if (checkMethods.isWrongDesign()) {
             driver.navigate().refresh();
         }

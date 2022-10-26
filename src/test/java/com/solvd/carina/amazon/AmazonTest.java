@@ -42,10 +42,10 @@ public class AmazonTest extends AbstractTest implements IAbstractTest, IMobileUt
         RemoteWebDriver driver = driverT.get();
         refreshPageIfWrongDesign(driver);
 
-        UpTabBase upTab = initPage(driver,UpTabBase.class);
+        UpTabBase upTab = initPage(driver, UpTabBase.class);
         ResultsPageBase resultsPage = upTab.findItem(searchItem);
         Assert.assertTrue(resultsPage.areTitlesContainsItem(searchItem), "Not all goods titles contains searched items");
-        HomePageBase homePage = NavigationService.goHome(driver);
+        HomePageBase homePage = NavigationService.goHome(driver, resultsPage);
         Assert.assertTrue(homePage.isHomePageOpen(), "Home page is not opened");
     }
 
@@ -64,7 +64,7 @@ public class AmazonTest extends AbstractTest implements IAbstractTest, IMobileUt
         TodaysDealPageBase todaysDealPage = menuTab.clickTodaysDealsBtn();
         Assert.assertTrue(todaysDealPage.ifTDPageIsOpen(), "No Today's Deals page is open");
         Assert.assertTrue(todaysDealPage.areGoodsHaveDiscount(), "Not All goods have discounts");
-        NavigationService.goHome(driver);
+        NavigationService.goHome(driver, todaysDealPage);
 
     }
 
@@ -87,7 +87,7 @@ public class AmazonTest extends AbstractTest implements IAbstractTest, IMobileUt
         FilterResultPageBase filterResultPage = filterMenuPage.clickPetBtn();
         Assert.assertTrue(filterResultPage.isTitleOnFilterResultPageWithPet(), " No 'Pet' title is displayed");
         Assert.assertTrue(filterResultPage.areAllGoodsTitleContainsSearchItem(pet), "No 'Pet' in title on filter result page present");
-        NavigationService.goHome(driver);
+        NavigationService.goHome(driver, filterResultPage);
     }
 
     @Test

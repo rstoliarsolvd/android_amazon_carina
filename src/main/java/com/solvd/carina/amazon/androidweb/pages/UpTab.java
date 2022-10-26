@@ -14,7 +14,7 @@ import org.openqa.selenium.support.FindBy;
 @DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = UpTabBase.class)
 public class UpTab extends UpTabBase {
 
-    private static final Logger LOGGER = Logger.getLogger(HomePage.class);
+    private static final Logger LOGGER = Logger.getLogger(UpTab.class);
 
     @FindBy(id = "nav-link-accountList-nav-line-1")
     private ExtendedWebElement signInBtn;
@@ -55,6 +55,7 @@ public class UpTab extends UpTabBase {
 
     /**
      * Another variant of inputTextInSearchField method (without back to selenium methods)
+     *
      * @param searchItem
      * @return
      */
@@ -63,7 +64,6 @@ public class UpTab extends UpTabBase {
 //        searchBtn.click();
 //        initPage(driver, ResultsPage.class);
 //    }
-
     @Override
     public ResultsPageBase findItem(String searchItem) {
         clickSearchField();
@@ -72,11 +72,11 @@ public class UpTab extends UpTabBase {
 
     @Override
     public HomePageBase clickHomeBtn() {
-       homeBtn.click();
+        homeBtn.click();
         HomePageBase homePage = new HomePage((RemoteWebDriver) driver);
         waitForJSToLoad();
         LOGGER.info("HomePage is opened : " + homePage.isHomePageOpen());
-        return homePage;
+        return initPage(HomePageBase.class);
     }
 
 }

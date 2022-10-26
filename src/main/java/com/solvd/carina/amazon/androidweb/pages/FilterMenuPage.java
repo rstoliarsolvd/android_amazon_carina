@@ -10,7 +10,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 
 @DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = FilterMenuPageBase.class)
-public class FilterMenuPage extends FilterMenuPageBase{
+public class FilterMenuPage extends FilterMenuPageBase {
 
     private static final Logger LOGGER = Logger.getLogger(FilterMenuPage.class);
 
@@ -42,7 +42,6 @@ public class FilterMenuPage extends FilterMenuPageBase{
         assertElementPresent(smartHomeBtn);
         smartHomeBtn.click();
         waitForJSToLoad();
-//        return ICustomTypePageFactory.initPage(driver, FilterMenuPageBase.class);
         return initPage(driver, FilterMenuPageBase.class);
     }
 

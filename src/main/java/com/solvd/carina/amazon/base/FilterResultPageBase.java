@@ -7,7 +7,7 @@ import java.util.List;
 
 public abstract class FilterResultPageBase extends AbstractPage {
 
-    public FilterResultPageBase (RemoteWebDriver driver) {
+    public FilterResultPageBase(RemoteWebDriver driver) {
         super(driver);
     }
 

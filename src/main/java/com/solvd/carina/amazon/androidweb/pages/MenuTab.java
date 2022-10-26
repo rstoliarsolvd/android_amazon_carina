@@ -30,7 +30,7 @@ public class MenuTab extends MenuTabBase {
 
     @Override
     public TodaysDealPageBase clickTodaysDealsBtn() {
-       todaysDealsBtn.clickIfPresent();
+        todaysDealsBtn.clickIfPresent();
         return initPage(driver, TodaysDealPageBase.class);
     }
 }

@@ -11,7 +11,7 @@ public abstract class HomePageBase extends AbstractPage {
         super(driver);
     }
 
-    public abstract boolean isHomePageOpen() ;
+    public abstract boolean isHomePageOpen();
 
     public abstract ExtendedWebElement getHomePageWebElement();
 }
